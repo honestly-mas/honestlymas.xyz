@@ -1,1 +1,149 @@
-this is a test 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YourName.lol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #222;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .profile img {
+            width: 100px;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        .links a {
+            display: block;
+            background: #444;
+            color: white;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .fun-facts {
+            margin-top: 20px;
+        }
+
+        .fun-facts ul {
+            list-style-position: inside; /* Moves bullet points inside */
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the bullet points */
+        }
+
+        .qa-section input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .qa-section button {
+            padding: 8px 15px;
+            background: #666;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .qa-section p {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile">
+            <img src="profile.gif" alt="My Profile Picture">
+            <h1>honestly_mas</h1>
+            <p>@honestly_mas</p>
+            <p>Welcome to my personal site! Here's some info about me.</p>
+        </div>
+
+        <div class="links">
+            <a href="https://twitter.com/honestly_mas" target="_blank">Twitter</a>
+            <a href="https://tiktok.com/@yourusername" target="_blank">TikTok - Coming Soon</a>
+            <a href="https://roblox.com/yourusername" target="_blank">ROBLOX - Coming Soon</a>
+        </div>
+
+        <div class="fun-facts">
+            <h2>Fun Facts</h2>
+            <ul>
+                <li>I love coding and making websites.</li>
+                <li>Big fan of Taylor Swift!</li>
+                <li>My favorite food is pizza.</li>
+            </ul>
+        </div>
+
+        <div class="qa-section">
+            <h2>Ask Me Something</h2>
+            <input type="text" id="discordUsername" placeholder="Your Discord Username">
+            <input type="text" id="question" placeholder="Type your question...">
+            <br>
+            <button onclick="submitQuestion()">Send Question</button>
+            <p id="response"></p>
+        </div>
+    </div>
+
+    <script>
+        function submitQuestion() {
+            let username = document.getElementById("discordUsername").value.trim();
+            let question = document.getElementById("question").value.trim();
+            let response = document.getElementById("response");
+
+            if (username === "" || question === "") {
+                response.innerHTML = "Please enter your Discord username and a question!";
+                return;
+            }
+
+            let webhookURL = "https://discord.com/api/webhooks/1317307341133058119/VUZ178ogmqHZ-mtGvRkFr00YhkLtCKPVS8aA1WXKPOLJVmYpv_YUrmqz4eGgFrtuKOCB"; // Replace with your Discord webhook URL
+
+            let payload = {
+                content: `**New Question Submitted!**\n👤 **Username:** ${username}\n❓ **Question:** ${question}`
+            };
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                response.innerHTML = "Your question has been sent!";
+                document.getElementById("discordUsername").value = "";
+                document.getElementById("question").value = "";
+            })
+            .catch(() => {
+                response.innerHTML = "Something went wrong. Try again!";
+            });
+        }
+    </script>
+
+</body>
+</html>
