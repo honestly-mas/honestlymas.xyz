@@ -5,49 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <meta http-equiv="refresh" content="3; url=https://twitter.com/honestly_mas">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #111;
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            max-width: 400px;
-            background-color: #222;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-
-        .manual-link {
-            display: inline-block;
-            padding: 8px 12px;
-            background: #444;
-            color: white;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 14px;
-            margin-top: 10px;
-        }
-    </style>
+   <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .container {
+      background: rgba(34, 34, 34, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 30px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .profile img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #555;
+      transition: transform 0.3s ease;
+    }
+    .profile img:hover {
+      transform: scale(1.05);
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 6px 0;
+    }
+    p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 2px 0;
+    }
+    .links a {
+      display: block;
+      background: #2a2a2a;
+      color: #fff;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+    .links a:hover {
+      background: #3d3d3d;
+      transform: translateY(-2px);
+    }
+    .fun-facts {
+      margin-top: 25px;
+    }
+    .fun-facts h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .fun-facts ul {
+      list-style: none;
+      padding: 0;
+      font-size: 14px;
+      color: #aaa;
+    }
+    .fun-facts li {
+      margin: 6px 0;
+    }
+    .qa-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .qa-section h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .qa-section input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2e2e2e;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+    .qa-section input:focus {
+      border: 1px solid #777;
+    }
+    .qa-section button {
+      padding: 10px 16px;
+      background: #5e5e5e;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+    }
+    .qa-section button:hover {
+      background: #7a7a7a;
+      transform: scale(1.03);
+    }
+    .qa-section p {
+      font-size: 13px;
+      color: #90ee90;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
 
