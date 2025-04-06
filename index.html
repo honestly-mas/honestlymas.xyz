@@ -8,155 +8,134 @@
   <style>
     * {
       box-sizing: border-box;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
-    body {
+    html, body {
+      height: 100vh;
+      overflow: hidden;
       font-family: 'Outfit', sans-serif;
       background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: #fff;
-      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      color: #fff;
     }
     .container {
       background: rgba(34, 34, 34, 0.85);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 20px;
-      padding: 30px;
+      padding: 16px;
       width: 100%;
       max-width: 420px;
+      height: 95vh;
       box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       text-align: center;
-      animation: fadeIn 0.6s ease-in-out;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
     }
     .profile img {
-      width: 90px;
-      height: 90px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 10px;
-      border: 3px solid #555;
-      transition: transform 0.3s ease;
-    }
-    .profile img:hover {
-      transform: scale(1.05);
+      margin-bottom: 6px;
+      border: 2px solid #555;
     }
     h1 {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
-      margin: 6px 0;
     }
     p {
-      font-size: 14px;
+      font-size: 12px;
       color: #ccc;
-      margin: 2px 0;
     }
     .links a {
       display: block;
       background: #2a2a2a;
       color: #fff;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 12px;
+      padding: 10px;
+      margin: 6px 0;
+      border-radius: 10px;
       text-decoration: none;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      font-size: 13px;
     }
-    .links a:hover {
-      background: #3d3d3d;
-      transform: translateY(-2px);
+    .fun-facts, .qa-section {
+      margin-top: 10px;
     }
-    .fun-facts {
-      margin-top: 25px;
-    }
-    .fun-facts h2 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: #fff;
+    .fun-facts h2, .qa-section h2 {
+      font-size: 14px;
+      margin-bottom: 6px;
     }
     .fun-facts ul {
       list-style: none;
       padding: 0;
-      font-size: 14px;
+      font-size: 12px;
       color: #aaa;
     }
     .fun-facts li {
-      margin: 6px 0;
+      margin: 4px 0;
     }
-    .qa-section {
-      margin-top: 30px;
-      text-align: center;
-    }
-    .qa-section h2 {
-      font-size: 16px;
-      margin-bottom: 10px;
+    .qa-section input, .qa-section button {
+      width: 100%;
+      font-size: 12px;
+      padding: 8px;
+      border-radius: 8px;
+      margin-top: 6px;
     }
     .qa-section input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
       border: none;
-      border-radius: 10px;
       background-color: #2e2e2e;
       color: #fff;
-      font-size: 14px;
-      outline: none;
-      transition: 0.2s ease;
-    }
-    .qa-section input:focus {
-      border: 1px solid #777;
     }
     .qa-section button {
-      padding: 10px 16px;
-      background: #5e5e5e;
       border: none;
-      color: white;
+      background: #5e5e5e;
+      color: #fff;
       cursor: pointer;
-      border-radius: 10px;
-      margin-top: 12px;
       font-weight: 600;
-      font-size: 14px;
-      transition: all 0.2s ease;
-    }
-    .qa-section button:hover {
-      background: #7a7a7a;
-      transform: scale(1.03);
     }
     .qa-section p {
-      font-size: 13px;
-      color: #90ee90;
-      margin-top: 10px;
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    @media (max-height: 600px) {
+      .container {
+        height: 100vh;
+        padding: 12px;
+      }
+      h1 { font-size: 18px; }
+      .profile img { width: 60px; height: 60px; }
+      .links a { padding: 8px; font-size: 12px; }
+      .qa-section input, .qa-section button { font-size: 11px; padding: 6px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="profile">
-      <img src="https://honestlymas.xyz/rep_eras_tour.gif" alt="My Profile Picture">
-      <h1>honestly_mas</h1>
-      <p>@honestly_mas</p>
-      <p>Welcome to my personal site!</p>
-    </div>
-    <div class="links">
-      <a href="https://honestlymas.xyz/links/twitter" target="_blank">Twitter</a>
-      <a href="https://honestlymas.xyz/404" target="_blank">TikTok - Coming Soon</a>
-      <a href="https://honestlymas.xyz/404" target="_blank">ROBLOX - Coming Soon</a>
-    </div>
-    <div class="fun-facts">
-      <h2>Fun Facts</h2>
-      <ul>
-        <li>I'm a staff member at RTU.</li>
-        <li>I made RTU's website.</li>
-        <li>I LOVEEE Taylor Swift.</li>
-      </ul>
+    <div>
+      <div class="profile">
+        <img src="https://honestlymas.xyz/rep_eras_tour.gif" alt="Profile Pic">
+        <h1>honestly_mas</h1>
+        <p>@honestly_mas</p>
+        <p>Welcome to my personal site!</p>
+      </div>
+      <div class="links">
+        <a href="https://honestlymas.xyz/links/twitter" target="_blank">Twitter</a>
+        <a href="https://honestlymas.xyz/404" target="_blank">TikTok - Coming Soon</a>
+        <a href="https://honestlymas.xyz/404" target="_blank">ROBLOX - Coming Soon</a>
+      </div>
+      <div class="fun-facts">
+        <h2>Fun Facts</h2>
+        <ul>
+          <li>I'm a staff member at RTU.</li>
+          <li>I made RTU's website.</li>
+          <li>I LOVEEE Taylor Swift.</li>
+        </ul>
+      </div>
     </div>
     <div class="qa-section">
       <h2>Contact Me</h2>
@@ -168,20 +147,21 @@
   </div>
   <script>
     function submitQuestion() {
-      let username = document.getElementById("discordUsername").value.trim();
-      let question = document.getElementById("question").value.trim();
-      let response = document.getElementById("response");
+      const username = document.getElementById("discordUsername").value.trim();
+      const question = document.getElementById("question").value.trim();
+      const response = document.getElementById("response");
 
-      if (username === "" || question === "") {
+      if (!username || !question) {
         response.innerHTML = "Please enter your Discord username and an inquiry!";
         response.style.color = "#ff7b7b";
         return;
       }
-      let webhookURL = "https://discord.com/api/webhooks/1317307341133058119/VUZ178ogmqHZ-mtGvRkFr00YhkLtCKPVS8aA1WXKPOLJVmYpv_YUrmqz4eGgFrtuKOCB";
-      let payload = {
+
+      const payload = {
         content: `**New Inquiry Submitted!**\n👤 **Username:** ${username}\n❓ **Inquiry:** ${question}`
       };
-      fetch(webhookURL, {
+
+      fetch("https://discord.com/api/webhooks/1317307341133058119/VUZ178ogmqHZ-mtGvRkFr00YhkLtCKPVS8aA1WXKPOLJVmYpv_YUrmqz4eGgFrtuKOCB", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
